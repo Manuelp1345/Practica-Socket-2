@@ -5,8 +5,8 @@ const path = require("path");
 const { buscar } = require("./scraping/search");
 
 const app = express()
-
-// parse application/x-www-form-urlencoded
+const port = process.env.PORT || 3000
+    // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
@@ -30,5 +30,5 @@ app.get("/api/:search", (req, res) => {
 
 
 })
-
+app.listen
 module.exports = app
