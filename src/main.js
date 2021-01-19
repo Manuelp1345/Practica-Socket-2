@@ -17,7 +17,6 @@ app.use(bodyParser.json())
 
 //habilitar la carpta public
 app.use(express.static(path.resolve(__dirname, "../public")))
-const port = process.env.PORT || 3000;
 
 app.get("/:search", (req, res) => {
     console.log(req.params.search);
@@ -31,12 +30,6 @@ app.get("/:search", (req, res) => {
 
 
 
-})
-
-
-
-app.listen(port, () => {
-    console.log("server en el puerto " + port);
 })
 
 module.exports = app

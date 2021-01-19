@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "name": "webscraping",
+    "public": true,
+    "routes": [
+        { "src": "/src/(.*)", "dest": "/src/main.js" }
+
+    ]
+}
