@@ -26,12 +26,18 @@ let buscar = async(search) => {
 
         for (let element of enlace) {
             links.push(element.href)
+            console.log(element.href);
         }
         return links
     })
+
+    enlaces.length = (enlaces.length - enlaces.length) + 6
+    console.log(enlaces.length);
+
     let artiuclos = []
-    for (let enlace of enlaces) {
-        await page.goto(enlace)
+
+    for (let element of enlaces) {
+        await page.goto(element)
         await page.waitForSelector(".ui-pdp-title")
 
         const artiuclo = await page.evaluate(() => {
@@ -39,7 +45,6 @@ let buscar = async(search) => {
             temp.titulo = document.querySelector(".ui-pdp-title").innerText
             temp.img = document.querySelector(".ui-pdp-gallery__figure img").src
             temp.precio = document.querySelector(".price-tag-fraction").textContent
-
             return temp
 
         })
@@ -50,6 +55,7 @@ let buscar = async(search) => {
         enlaces,
         artiuclos
     }
+
     await browser.close();
     return books
 

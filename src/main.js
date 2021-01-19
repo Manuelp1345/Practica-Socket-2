@@ -23,7 +23,9 @@ app.get("/:search", (req, res) => {
     console.log(req.params.search);
     buscar(req.params.search).then(e => {
         res.json({
-            e
+            ok: "ok",
+            enlaces: e.enlaces,
+            articulos: e.artiuclos
         })
     })
 
