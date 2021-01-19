@@ -23,11 +23,13 @@ app.get("/api/:search", (req, res) => {
         res.json({
             ok: "ok",
             enlaces: e.enlaces,
-            articulos: e.artiuclos
+            titulo: e.titulo,
+            img: e.img,
+            precio: e.precio
+
         })
+        console.log(e.img);
     })
-
-
 
 })
 app.listen(port, () => {
