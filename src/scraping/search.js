@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer");
 
 let buscar = async(search) => {
     //abrir navegador
-    const browser = await puppeteer.launch({ headless: true })
+    const browser = await puppeteer.launch()
         //nueva pestaña
     const page = await browser.newPage()
 
@@ -50,7 +50,7 @@ let buscar = async(search) => {
         enlaces,
         artiuclos
     }
-
+    await browser.close();
     return books
 
 }
