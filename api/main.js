@@ -30,5 +30,7 @@ app.get("/api/:search", (req, res) => {
 
 
 })
-app.listen
+app.listen(port, () => {
+    console.log(`server en el puerto ${port}`);
+})
 module.exports = app
