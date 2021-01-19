@@ -1,7 +1,7 @@
 {
     "name": "webscraping-2",
     "version": "1.0.0",
-    "main": "src/main.js",
+    "main": "main.js",
     "scripts": {
         "start": "netlify-lambda serve src",
         "build": "netlify-lambda build src"
