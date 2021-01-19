@@ -1,9 +1,9 @@
 {
     "name": "webscraping-2",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "main.js",
     "scripts": {
-        "start": "node src/main.js"
+        "build": "node api/main.js"
     },
     "keywords": [],
     "author": "",
@@ -11,7 +11,6 @@
     "dependencies": {
         "body-parser": "^1.19.0",
         "express": "^4.17.1",
-        "netlify-lambda": "^2.0.3",
         "puppeteer": "^5.5.0"
     },
     "devDependencies": {},

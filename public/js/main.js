@@ -5,7 +5,7 @@ function search() {
     contenedor.innerHTML = `<div class="align-items-center mt-5 spinner-border" role="status"></div>`
 
 
-    fetch(`/${searchBar}`).then(e => e.json())
+    fetch(`api/${searchBar}`).then(e => e.json())
         .then(e => {
 
             let enlaces = e.enlaces,

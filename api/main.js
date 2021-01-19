@@ -1,13 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const http = require("http");
 const path = require("path");
 
 const { buscar } = require("./scraping/search");
 
-
 const app = express()
-let server = http.createServer(app);
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -16,10 +13,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 //habilitar la carpta public
-app.use(express.static(path.resolve(__dirname, "../public")))
+const publicPath = path.resolve(__dirname, '../public');
+console.log(publicPath);
+app.use(express.static(publicPath));
 
-app.get("/:search", (req, res) => {
-    console.log(req.params.search);
+app.get("/api/:search", (req, res) => {
+
     buscar(req.params.search).then(e => {
         res.json({
             ok: "ok",
@@ -33,4 +32,3 @@ app.get("/:search", (req, res) => {
 })
 
 module.exports = app
-module.exports.handler = server
