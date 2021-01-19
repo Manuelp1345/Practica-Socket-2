@@ -1,12 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const http = require("http");
 const path = require("path");
-const server = require("serverless-http");
+
 const { buscar } = require("./scraping/search");
 
 
 const app = express()
-
+let server = http.createServer(app);
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -37,4 +38,4 @@ app.listen(port, () => {
 })
 
 module.exports = app
-module.exports.handler = server(app)
+module.exports.handler = server
